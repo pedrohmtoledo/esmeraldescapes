@@ -85,14 +85,14 @@ header .container button {
   width: 100px;
   height: 33px;
   color: #f9faf8;
-  background-color: #3882f6;
+  background-color: #126136;
   font-weight: 700;
   border-radius: 6px;
   font-size: 18px;
 }
 
 header .container button:hover {
-  background-color: #163970;
+  background-color: #0c3f23;
   cursor: pointer;
 }
 

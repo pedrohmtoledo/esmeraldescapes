@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../styles/style.css" />
-    <script src="../js/script.js" defer="defer"></script>
+    <link rel="stylesheet" href="../styles/experiences.css" />
+    <script type="module" src="../js/script.js" defer="defer"></script>
   </head>
   <body>
     <nav class="nav">
@@ -13,12 +14,30 @@
         <div class="logo">Esmerald Escapes</div>
         <ul class="navopt">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="#">Experiences</a></li>
+          <li><a href="./experiences.html">Experiences</a></li>
           <li><a href="#">Contact & Booking</a></li>
         </ul>
       </div>
     </nav>
-    <div id="experiences"></div>
+    <div class="filters">
+      <label for="categoryfilter">Category</label>
+      <select id="categoryfilter">
+        <option>All</option>
+        <option>Coastal</option>
+        <option>City</option>
+        <option>Countryside</option>
+        <option>Family</option>
+        <option>Culture</option>
+      </select>
+      <label for="priceFilter">price</label>
+      <select id="priceFilter">
+        <option value="0">All</option>
+        <option value="1">Under €150</option>
+        <option value="2">€150 to €400</option>
+        <option value="3">over €400</option>
+      </select>
+    </div>
+    <div class="experiences" id="experiences"></div>
 
     <footer class="footer">Copyright &copy; Esmerald Escapes</footer>
   </body>
