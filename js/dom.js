@@ -1,9 +1,16 @@
-const exp = document.querySelector('#experiences');
-const cards = document.createElement('div');
-cards.setAttribute('class', 'cards');
+const experience = document.querySelector('#experienceList');
 
+// this function will load all experiences to exprience page.
 export function loadExperiences(listOfExperiences) {
-  cards.innerHTML = '';
+  experience.innerHTML = '';
+
+  if (listOfExperiences.length === 0) {
+    const noResult = document.createElement('div');
+    noResult.setAttribute('class', 'no-results');
+
+    noResult.innerHTML = 'No experience matches the search';
+    return experience.appendChild(noResult);
+  }
 
   listOfExperiences.forEach((exp) => {
     const card = document.createElement('div');
@@ -19,35 +26,34 @@ export function loadExperiences(listOfExperiences) {
 
     const tag = document.createElement('span');
     tag.setAttribute('class', 'card-tag');
-    tag.innerHTML += exp.category;
+    tag.innerHTML = exp.category;
 
     const title = document.createElement('h3');
     title.setAttribute('class', 'card-title');
-    title.innerHTML += exp.title;
+    title.innerHTML = exp.title;
 
     const location = document.createElement('p');
     location.setAttribute('class', 'card-location');
-    location.innerHTML += exp.location;
+    location.innerHTML = exp.location;
 
     const description = document.createElement('p');
     description.setAttribute('class', 'card-description');
-    description.innerHTML += exp.description;
+    description.innerHTML = exp.description;
 
     const footer = document.createElement('div');
     footer.setAttribute('class', 'card-footer');
 
     const duration = document.createElement('span');
     duration.setAttribute('class', 'card-duration');
-    duration.innerHTML += exp.duration;
+    duration.innerHTML = exp.duration;
 
     const price = document.createElement('span');
     price.setAttribute('class', 'card-price');
-    price.innerHTML += `€${exp.price}`;
+    price.innerHTML = `€${exp.price}`;
 
     footer.append(duration, price);
     cardBody.append(tag, title, location, description, footer);
     card.append(img, cardBody);
-    cards.appendChild(card);
+    experience.appendChild(card);
   });
-  exp.appendChild(cards);
 }

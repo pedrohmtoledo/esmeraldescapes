@@ -2,7 +2,7 @@ import { experiences } from './experiences.js';
 import { loadExperiences } from './dom.js';
 import { filterHandler } from './handlers.js';
 
-const categoryFilter = document.querySelector('#categoryfilter');
+const categoryFilter = document.querySelector('#categoryFilter');
 const priceFilter = document.querySelector('#priceFilter');
 
 categoryFilter.addEventListener('change', () => {

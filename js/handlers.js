@@ -1,7 +1,8 @@
-import { loadExperiences } from './dom';
+import { loadExperiences } from './dom.js';
+import { experiences } from './experiences.js';
 
+// handler for the filters to filter exprience by category and price
 export function filterHandler(category, price) {
-  console.log('test');
   let filteredExperiences = experiences.filter((exp) => {
     if (category === 'all') return exp;
     return exp.category === category;
